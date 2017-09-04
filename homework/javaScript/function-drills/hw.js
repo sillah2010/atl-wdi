@@ -64,7 +64,12 @@ var wordsWithAtLeastFiveLetters = function(words){
 //          `false` otherwise
 // Edge Case: If the array is empty, the function should return `true`.
 var allStartingWithA = function(words){
-  // Your Code Here
+  for (let i = 0; i < words.length; i++) {
+    if (!(words[i].slice(0, 1) === 'a' || words[i].slice(0, 1) === 'A')) {
+         return false;
+    }
+  }
+  return true;
 };
 
 // #6
@@ -72,7 +77,12 @@ var allStartingWithA = function(words){
 // Output: `true` if there are ANY words that start with the letter 'b'
 //          (case-insensitive), `false` otherwise
 var anyStartingWithB = function(words){
-  // Your Code Here
+  for (let i = 0; i < words.length; i++) {
+    if (words[i].slice(0, 1) === 'b' || words[i].slice(0, 1) === 'B') {
+         return true;
+    }
+  }
+  return false;
 };
 
 // #7
