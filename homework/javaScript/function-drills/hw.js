@@ -92,23 +92,38 @@ var anyStartingWithB = function(words){
 //    Assume that vowels are 'a', 'e', 'i', 'o', and 'u' (NOT 'y')
 // Edge Case: If `n` is less than zero, return `null`.
 var hasAtLeastNVowels = function(word, n){
-  // Your Code Here
-};
+  if (n < 0) {
+    return null;
+  }
+  return word.match(/[aeiou]|[AEIOU]/g).length >= n;
+ };
 
 // #8
 // Input: an array of words
 // Output: an array of words from the original array that have at least two
 //          vowels
 var wordsWithAtLeastTwoVowels = function(words){
-  // Your Code Here
-};
+  let newArray = [];
+  for (let i = 0; i < words.length; i++){
+    
+    if (words[i].match(/[aeiou]|[AEIOU]/g).length > 1) {
+      newArray.push(words[i]);
+    }
+  }
+  return newArray;
+  };
 
 // #9
 // Input: an array of words
 // Output: `true` if ALL words have two or more vowels, `false` otherwise
 // Edge Case: If the array is empty, the function should return `true`.
 var allHaveAtLeastTwoVowels = function(words){
-  // Your Code Here
+  for (let i = 0; i < words.length; i++) {
+    if ((words[i].match(/[aeiou]|[AEIOU]/g).length) < 2) {
+    return false;
+    }
+  }
+  return true;
 };
 
 // #10
