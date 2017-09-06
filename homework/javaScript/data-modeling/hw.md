@@ -60,13 +60,36 @@ track of whether tasks have been completed, it will also keep track of
 how long each task took to complete. Tasks can be grouped into 'projects' to
 keep them organized.
 
-> Answer here
+> A task has:
+>- a name
+>- beginning time
+>- ending time
+
+> A project is:
+>- a collection of tasks
+>- tasks with things in common
+
+>Each task should have its own time of start and completion to effectively keep track of it. Then they would be logged into the entire project.
+
+```js
+const task = {
+  name: 'Vacuum Room',
+  timeStarted: '09/05/17',
+  timeFinished: '09/05/17',
+};
+
+const project = {
+  name: 'Spring cleaning',
+  tasks: ['Vacuum Room', 'Clean Restroom', 'Sweep Wood Floor']
+};
+```
 
 ### 2. Photo Sharing App
 
 In this app, users can upload photos to their accounts and share them with others. These photos can be grouped into albums.
 
-> Answer here
+> 
+
 
 ### 3. Home Automation Manager
 
