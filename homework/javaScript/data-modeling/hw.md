@@ -238,7 +238,7 @@ var exampleLine = {
 
 What are some advantages and disadvantages of choosing these representations? Please give at least one example of each.
 
-> Answer here
+> One disadvantage is the fact it doesnt tell how man stop a traveler needs to get from point A to point B. One advantage is that it details each stop with a namea and description of the stops.
 
 ### 6. Doctor Appointment App
 
@@ -341,7 +341,16 @@ Under what circumstances might one representation be a better choice than the
 other? Are there any circumstances in which the other representation might be
 the better choice?
 
-> Answer here
+Option 1
+- Advantage: Has all the appointsments a doctors is scheduled to be at under the doctor. Makes it easier to find appointments based of doctors
+- Disadvantage: Hard to find appointments based of specific patients
+
+Option 2
+- Advantage: Has appointments as the main search base for the search, and they list the doctor and patient
+- Disadvantage: Makes its hard to find a specific appointment for a doctor
+
+Which ones better:
+- Its a toss up. It would depend if this app focuses on the doctors or the patients as the main search base.
 
 ## Tying It Together
 
@@ -352,13 +361,29 @@ You've been tasked with building an in-browser tic-tac-toe game.
 a.  What are some possible entities that your application might use to model its
     data? Please pick at least two, with at least two properties apiece.
 
-  > Answer here
+  > Players
+  - username
+  - move data
+
+  > Game Data
+  - player move date
+  - position
 
 b.  How might those entities be represented in JavaScript code?
 
-  > Answer here
+  ```js
+  const player = {
+    username: 'Cartman',
+    moveData: 'X' 
+  }
+
+  const gameData = {
+    playerMoveData: [Cartman, X],
+    position: 1
+  };
+  ```
 
 c.  Justify your choices in a) and b). Why these entities? Why these
     representations?
 
-  > Answer here
+  Each players name and move will be saved in the gameData variable and would update each time one player makes a move.
