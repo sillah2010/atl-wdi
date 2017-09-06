@@ -61,13 +61,13 @@ how long each task took to complete. Tasks can be grouped into 'projects' to
 keep them organized.
 
 > A task has:
->- a name
->- beginning time
->- ending time
+- a name
+- beginning time
+- ending time
 
 > A project is:
->- a collection of tasks
->- tasks with things in common
+- a collection of tasks
+- tasks with things in common
 
 >Each task should have its own time of start and completion to effectively keep track of it. Then they would be logged into the entire project.
 
@@ -88,7 +88,29 @@ const project = {
 
 In this app, users can upload photos to their accounts and share them with others. These photos can be grouped into albums.
 
-> 
+> A photo has:
+- a name
+- date posted
+- url
+
+> An album has:
+- a name
+- a set of photos
+
+> Each photo has a name, date (when the user posted), and an url. The album is a collection of photos.
+
+```js
+const photo = {
+  name: 'photo from beach',
+  date: 'February 2016',
+  url: 'images/photo1.jpg'
+};
+
+const album = {
+  name: 'Trip to the Bahamas',
+  setOfPhotos: ['images/photo1.jpg', 'images/photo2.jpg', 'images/photo3.jpg', 'images/photo4.jpg', 'images/photo5.jpg']
+};
+```
 
 
 ### 3. Home Automation Manager
@@ -98,7 +120,29 @@ track of the time and temperature of the house that it monitors, and use that
 information to turn on and off different lights and adjust the thermostat up
 and down.
 
-> Answer here
+> Access to lights:
+- locations
+- assignedName
+- brightness
+
+> Homesystem:
+- set of lights
+- temperature
+
+> The house system is responsible for the temperature by taking feedback from the lights in the house. The lights measure the brightness and how many are on.
+
+```js
+const light = {
+  location: 'guest room',
+  name: 'lightOne',
+  brightness: 5
+};
+
+const homeSystem = {
+  setOfLights: ['kitchen', 'guest room', 'master bedroom'],
+  temperature: 80
+};
+```
 
 ### 4. Sneaker Store
 
@@ -106,7 +150,39 @@ This app will allow customers to browse a list of products (sneakers, in this
 case), add those products to a cart, and save that cart as a past order once the
 purchase is complete.
 
-> Answer here
+> Item:
+- Name
+- Description
+- Price
+
+> Cart:
+- Products 
+- Quatity
+
+> Order:
+- Status
+- Date of Completion
+
+> The item(s) must be displayed and show the essential detals (name, description, price). The cart holds the selected items and the quanity, while the order finalizes and show the date of completion
+
+```js
+const item = {
+  name: 'Air Yeezy 2018',
+  description: 'Yeezies....cause why not',
+  price: 500
+};
+
+const cart = {
+  products: ['Air Yeezy 2018', 'Air Jordan Retron'],
+  quantity: 2
+};
+
+const order = {
+  status: 'fulfilled',
+  dateCompleted: '09/05/2017'
+};
+
+```
 
 ## Representing Abstractions in Code
 
