@@ -8,7 +8,7 @@
 const CounterCollection = {
   lastCountId: 0,
   counters: [], // e.g. {countId: 3, count: 20}
-  createCounter: function(){
+  createCounter: function () {
     this.lastCountId++;
     this.counters.push({
       countId: this.lastCountId,
@@ -16,16 +16,16 @@ const CounterCollection = {
     });
     return this.lastCountId;
   },
-  getCounterValue: function(countId){
+  getCounterValue: function (countId) {
     console.log(`read counter #${countId}`);
-    let counter = this.counters.find(function(counter){
+    let counter = this.counters.find(function (counter) {
       return counter.countId === countId;
     });
     if (counter) { return counter.count; }
   },
-  incrementCounter: function(countId){
+  incrementCounter: function (countId) {
     console.log(`increment counter #${countId}`);
-    let counter = this.counters.find(function(counter){
+    let counter = this.counters.find(function (counter) {
       return counter.countId === countId;
     });
     if (counter) {
@@ -33,13 +33,13 @@ const CounterCollection = {
       return counter.count;
     }
   },
-  destroyCounter: function(countId){
+  destroyCounter: function (countId) {
     console.log(`destroy counter #${countId}`);
-    let counter = this.counters.find(function(counter){
+    let counter = this.counters.find(function (counter) {
       return counter.countId === countId;
     });
     if (counter) { counter.destroy(); }
-    this.counters = this.counters.filter(function(counter){ //
+    this.counters = this.counters.filter(function (counter) { //
       return counter.countId !== countId
     });
   }
@@ -47,33 +47,46 @@ const CounterCollection = {
 
 // UI //
 const Presenter = {
-  insertCounterComponent: function(newCountId){
+  insertCounterComponent: function (newCountId) {
     console.log(`insert counter component #${newCountId}`);
-    // Your Code Here
+    let newCounterDiv = document.createElement('div');
+    newCounterDiv.innerHTML = `<h3>Count: <span>0</span></h3> <button class='increment'> +1 </button> <button class='delete'> Delete </button>`;
+    newCounterDiv.className += 'counter';
+    newCounterDiv.dataset.countId = newCountId;
+    newCounterDiv.getElementsByClassName('increment')[0].onclick = AppController.onClickIncrement;
+    newCounterDiv.getElementsByClassName('delete')[0].onclick = AppController.onClickDelete;
+    document.getElementById('counter-list').appendChild(newCounterDiv);
   },
-  refreshCounterComponent: function(countId){
+  refreshCounterComponent: function (countId) {
     console.log(`refresh counter component #${countId}`);
-    // Your Code Here
+    let countValue = CounterCollection.getCounterValue(countId);
+    document.querySelector(`[data-count-id="${countId}"] span`).innerHTML = countValue;
   },
-  removeCounterComponent: function(countId){             // REACH
+  removeCounterComponent: function (countId) {             // REACH
     console.log(`remove counter component #${countId}`);
-    // Your Code Here
+    let counter = document.querySelector(`[data-count-id="${countId}"]`);
+    counter.parentNode.removeChild(counter);
+
   }
 };
 
 // Top-Level Application Control //
 const AppController = {
-  onClickNewCounter: function(event){
-    // Your Code Here
+  onClickNewCounter: function (event) {
+    CounterCollection.createCounter();
+    Presenter.insertCounterComponent(CounterCollection.lastCountId);
   },
-  onClickIncrement: function(event){
-    // Your Code Here
+  onClickIncrement: function (event) {
+    let countId = Number(event.target.parentNode.dataset.countId);
+    CounterCollection.incrementCounter(countId);
+    Presenter.refreshCounterComponent(countId);
   },
-  onClickDelete: function(event){                           // REACH
-    // Your Code Here
+  onClickDelete: function (event) {                           // REACH
+    let countId = Number(event.target.parentNode.dataset.countId);
+    Presenter.removeCounterComponent(countId);  
   }
 };
 
-window.onload = function(){
+window.onload = function () {
   document.getElementById('new-counter').onclick = AppController.onClickNewCounter;
 };
