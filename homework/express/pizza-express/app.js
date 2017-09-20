@@ -5,6 +5,8 @@ const hbs = require('hbs');
 
 app.set("view engine", "hbs");
 app.set('views', './views');
+app.use(express.static(__dirname + '/public'));
+
 
 app.get('/', (req, res) => {
     res.render("index", {
@@ -23,6 +25,11 @@ app.get('/order/:amount/:size', (req, res) => {
         phrase: `Your order for ${req.params.amount}  ${req.params.size} pizzas will be ready in 1 minute!!`
     })
 })
+
+app.get('*', (req, res) => {
+    res.send("404 Page Not Found", 404);
+});
+  
 
 
 app.listen(port, function () {
