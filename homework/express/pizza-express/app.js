@@ -7,15 +7,21 @@ app.set("view engine", "hbs");
 app.set('views', './views');
 
 app.get('/', (req, res) => {
-    res.send("Welcome to Pizza Express!");
+    res.render("index", {
+        phrase: "Welcome to Pizza Express!"
+    });
 })
 
 app.get('/topping/:type', (req, res) => {
-    res.send(`${req.params.type} pizza! Good choice.`);
+    res.render("toppings", {
+        phrase: `${req.params.type} pizza! Good choice.`
+    });
 })
 
 app.get('/order/:amount/:size', (req, res) => {
-    res.send(`Your order for ${req.params.amount}  ${req.params.size} pizzas will be ready in 1 minute!!`);
+    res.render("order", {
+        phrase: `Your order for ${req.params.amount}  ${req.params.size} pizzas will be ready in 1 minute!!`
+    })
 })
 
 
