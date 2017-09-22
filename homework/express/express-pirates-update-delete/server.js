@@ -6,6 +6,7 @@ var app = express();
 var logger = require("morgan");
 var bodyParser = require("body-parser");
 var hbs = require('hbs');
+const methodOverride = require('method-override');
 
 
 //===========================
@@ -16,9 +17,14 @@ app.use(logger("dev"));
 //these are for bodyParser
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
+app.use(methodOverride('_method'));
 //set handlebars as view engine
 app.set("view engine", "hbs");
 app.set('views', './views');
+
+app.get('/', function(req,res) {
+	res.send('This is our Home Page');
+  });
 
 //===========================
 // CONTROLLERS
@@ -33,5 +39,5 @@ app.use("/pirates", pirateController);
 // LISTENERS
 //===========================
 app.listen(3000, function(req, res){
-	console.log("listening");
+	console.log("listening on port 3000");
 });

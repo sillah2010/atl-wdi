@@ -1,53 +1,71 @@
-//==============================
-// REQUIREMENTS
-//==============================
+const express = require("express");
+const router = express.Router();
+const pirates = require('../models/pirates.js');
 
-var express = require("express");
-var router = express.Router();
-var pirates = require('../models/pirates.js');
-
-//==============================
-// READ
-//==============================
-//for root pirate page
-router.get('/', function(req, res){
-	res.render("pirates/index.hbs", {
+//index
+router.get("/", (req, res) => {
+	res.render('pirates/index', {
 		pirates: pirates
 	});
+})
+
+//new pirate
+router.get('/new', (req, res) => {
+	res.render('pirates/new')
+})
+
+//show pirate
+router.get('/:id', (req, res) => {
+	const id = parseInt(req.params.id);
+	const pirate = pirates[id];
+	res.render('pirates/show', {
+		pirate: pirate
+	})
+})
+
+//post
+router.post('/', (req, res) => {
+	const newPirate = {
+		name: req.body.name,
+		birthplace: req.body.birthplace,
+		death_year: req.body.death_year,
+		base: req.body.base,
+		nickname: req.body.nickname
+	}
+	console.log(req.body)
+	pirates.push(newPirate);
+
+	res.redirect("/pirates");
+})
+
+//edit
+router.get('/:id/edit', (req, res) => {
+	const id = req.params.id
+	const pirate = pirates[id]
+	console.log(pirate);
+	res.render('pirates/edit.hbs', {
+		//Because the object 
+		pirates: pirate,
+		id: id
+	})
+})
+
+//update
+router.put('/:id', (req, res) => {
+	const updatedPirate = pirates[req.params.id];
+	updatedPirate.name = req.body.name;
+	updatedPirate.birthplace = req.body.birthplace;
+	updatedPirate.death_year = req.body.death_year;
+	updatedPirate.base = req.body.base;
+	updatedPirate.nickname = req.body.nickname;
+	res.redirect(`/pirates/${req.params.id}`);
 });
 
-
-router.get('/new', function(req, res){
-	res.render("pirates/new.hbs");
+//delete
+router.delete('/:id', (req, res) => {
+	pirates.splice(req.params.id, 1);
+	res.redirect('/pirates');
 });
 
-
-//this is for each pirate page
-router.get('/:id', function(req, res){
-
-	//grab the pirate by id
-	var showPirate = pirates[req.params.id];
-
-	res.render("pirates/show.hbs", {
-		pirate: showPirate
-	});
-});
-
-
-//==============================
-// CREATE
-//==============================
-
-//==============================
-// UPDATE
-//==============================
-
-//==============================
-// DESTROY
-//==============================
-
-//==============================
-// EXPORTS
-//==============================
 
 module.exports = router;
