@@ -15,3 +15,12 @@ var player = {
     console.log(tamagotchi.name + ' got some Zzzzs! Restedness: ' + tamagotchi.restedness);
   }
 }; //end player
+
+player.feedTamagotchi(Josuke);
+player.feedTamagotchi(Jotaro);
+
+player.medicateTamagotchi(Josuke);
+player.medicateTamagotchi(Jotaro);
+
+player.knockOutTamagotchi(Josuke);
+player.knockOutTamagotchi(Jotaro);

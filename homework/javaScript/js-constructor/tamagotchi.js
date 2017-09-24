@@ -24,6 +24,7 @@ class Tamagotchi {
 
     yawn() {
         this.restedness--;
+        console.log("Yawnnnn!!");
         console.log(this.name + " has a current restedness of " + this.restedness);
     }
 
@@ -32,9 +33,13 @@ class Tamagotchi {
 
 
 //create new Tamagotchis
-const Jonathan = new Tamagotchi('Jojo','monkey');
-Jonathan.cry();
+const Josuke = new Tamagotchi('Josuke','monkey');
+Josuke.cry();
+Josuke.puke();
+Josuke.yawn();
 const Jotaro = new Tamagotchi('Jotaro','seal');
 Jotaro.cry()
+Jotaro.puke();
+Jotaro.yawn();
 
 //test out your Tamagotchies below via console.logs
