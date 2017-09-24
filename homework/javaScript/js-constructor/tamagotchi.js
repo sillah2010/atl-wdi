@@ -15,6 +15,18 @@ class Tamagotchi {
         console.log(this.name + "'s food in tummy went down to " + this.foodInTummy);
         
     }
+
+    puke() {
+        this.health--;
+        console.log("Urghhhhhhhhhh");
+        console.log(this.name + " is sick. Current health is " + this.health);
+    }
+
+    yawn() {
+        this.restedness--;
+        console.log(this.name + " has a current restedness of " + this.restedness);
+    }
+
  
 }
 
