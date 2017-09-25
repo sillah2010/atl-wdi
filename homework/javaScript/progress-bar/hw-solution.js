@@ -42,7 +42,7 @@ var timerUI = {
   drawCrawlers: function(timerValue){
     //// MVP
     var timeElapsed = 100 - timerValue;
-    if (timerValue%2 === 0) {
+    if (timerValue % 2 === 0) {
       document.getElementsByClassName('crawler')[0].style.marginTop = '0px';
     }
     else {

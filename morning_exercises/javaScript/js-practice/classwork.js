@@ -14,15 +14,15 @@ resOne = true;
 
 // 2. null || ''
 var resTwo;
-resTwo = true;
+resTwo = false;
 
 // 3. 'false' && true
 var resThree;
-resThree = false;
+resThree = true;
 
 // 4. !!0
 var resFour;
-resFour = true;
+resFour = false;
 
 // 5. !null && !undefined
 var resFive;
@@ -53,7 +53,7 @@ while (resSeven < 95 || resSeven > 105){
 //    calculates the sum of all of those numbers, storing the result in the
 //    variable `resEight`.
 var resEight;
-for (i = 0; i < 1857; i++) {
+for (let i = 0; i < 1857; i++) {
   resEight += i;
 }
 
@@ -61,7 +61,7 @@ for (i = 0; i < 1857; i++) {
 //    (inclusive) and 1000 (exclusive); store the result in the variable
 //    `resNine`.
 var resNine;
-for (i = 0; i < 1000; i++) {
+for (let i = 0; i < 1000; i++) {
   if (i % 7 === 0) {
     resNine += i;
   }
@@ -69,6 +69,12 @@ for (i = 0; i < 1000; i++) {
 
 // 10. For numbers 1-10, calculate n^n and then store the sum of all of these values in the variable `resTen`.
 var resTen;
+for (let i = 1; i <= 10; i++) {
+
+  for (let j = 0; j < i; j++){
+
+  }
+}
 
 
 /// DO NOT EDIT BELOW THIS LINE ///
