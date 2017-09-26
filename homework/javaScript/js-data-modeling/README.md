@@ -56,7 +56,7 @@ const user = {
 }
 
 const radioStation = {
-  name: "OG 97.9,
+  name: "OG 97.9",
   genre: "Oldschool Hip-Hop
   songlist: [
     "Check Yo Self",
@@ -72,7 +72,7 @@ This app will be a tool for managing all of your favorite bands' concerts; it wi
 
 ```js
 const musicalAct = {
-  name: "Michael Jackson,
+  name: "Michael Jackson",
   venues: [
     "Manchester, England",
     "Los Angeles, California",
@@ -118,7 +118,7 @@ This app shows you all the latest stats from your favorite sports teams. You can
 ```js
 const team = {
   name: "Atlanta Falcons",
-  sport: 'Football'
+  sport: 'Football',
   winsThisSeason: 12,
   lossesThisSeason: 4
 }
