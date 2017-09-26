@@ -28,9 +28,17 @@ entities/abstractions (e.g. Senior Paws app, above) that the app might use, and 
 ### 1. Ultra E-mail App
 
 This app provides easy access to all your e-mail service providers in one app. The app will let you select one of your email addresses and view your e-mails for that address.
-
-```
-Write your answer here or in a separate js file.
+ 
+```js
+const user = {
+  name: "John Doe",
+  birthday: 01011990,
+  emails: [
+    "johndoe1@gmail.com",
+    "johndoe2@yahoo.com",
+    "johndoe3@aol.com"
+  ]
+}
 ```
 
 ### 2. Radio on the Internet app
@@ -38,28 +46,89 @@ Write your answer here or in a separate js file.
 This app hosts a ton of radio stations, each featuring their own playlists of songs. The radio stations can be listed by genre or popularity.
 
 
-```
-Write your answer here or in a separate js file.
+```js
+const user = {
+  name: "John Doe",
+  favoritedStations: [
+    "V-103",
+    "OG 97.9"
+  ]
+}
+
+const radioStation = {
+  name: "OG 97.9,
+  genre: "Oldschool Hip-Hop
+  songlist: [
+    "Check Yo Self",
+    "The Way You Move",
+    "Children's Story"
+  ]
+}
 ```
 
 ### 3. Rock Concert App
 
 This app will be a tool for managing all of your favorite bands' concerts; it will keep track of their tour dates, ticket purchasing, and next recommended show.
 
-```
-Write your answer here or in a separate js file.
+```js
+const musicalAct = {
+  name: "Michael Jackson,
+  venues: [
+    "Manchester, England",
+    "Los Angeles, California",
+    "New York, New York,
+  ],
+  concertDates: [
+    04221992, 
+    05061992, 
+    08181992
+  ]
+}
+
+const user = {
+  name: "John Doe"
+  ticketPurchased: {
+    performerName: "Michael Jackson",
+    venue: "Manchester, England",
+    date: 04221992 
+  }
+}
 ```
 
 ### 4. Coffee To-Go App
 
 This app will allow customers to browse a list of coffeeshops nearby, order drinks off of their menu, add those drinks to a shopping cart, and save that cart as a past order once the purchase is complete.
 
+```js
+const user = {
+  name: "John Doe",
+  nearestCoffeeShops:[],
+  pastOrders: []
+}
+
+const starbucks = {
+  menu = []
+}
+```
+
 ### 5. Team Tracker App
 
 This app shows you all the latest stats from your favorite sports teams. You can view individual player stats and full team stats.
 
-```
-Write your answer here or in a separate js file.
+```js
+const team = {
+  name: "Atlanta Falcons",
+  sport: 'Football'
+  winsThisSeason: 12,
+  lossesThisSeason: 4
+}
+
+const player = {
+  name: 'Matt Ryan',
+  sport: 'Football,
+  position: 'Quaterback',
+  interceptionsThisSeason: 13
+}
 ```
 
 
@@ -67,8 +136,8 @@ Write your answer here or in a separate js file.
 
 Q. When you were creating relationships between the models, what were some thoughts or questions you had to help guide a connection between them?
 
-```
-Write your answer here or in a separate js file.
+```js
+'The various connections between objects is vast and endless. I feel like I can never find all the user interactions first time through.'
 ```
 
 ### Reading and Videos for Tomorrow
