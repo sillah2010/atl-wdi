@@ -57,7 +57,7 @@ const user = {
 
 const radioStation = {
   name: "OG 97.9",
-  genre: "Oldschool Hip-Hop
+  genre: "Oldschool Hip-Hop",
   songlist: [
     "Check Yo Self",
     "The Way You Move",
@@ -76,7 +76,7 @@ const musicalAct = {
   venues: [
     "Manchester, England",
     "Los Angeles, California",
-    "New York, New York,
+    "New York, New York"
   ],
   concertDates: [
     04221992, 
@@ -86,7 +86,7 @@ const musicalAct = {
 }
 
 const user = {
-  name: "John Doe"
+  name: "John Doe",
   ticketPurchased: {
     performerName: "Michael Jackson",
     venue: "Manchester, England",
@@ -125,7 +125,7 @@ const team = {
 
 const player = {
   name: 'Matt Ryan',
-  sport: 'Football,
+  sport: 'Football',
   position: 'Quaterback',
   interceptionsThisSeason: 13
 }
