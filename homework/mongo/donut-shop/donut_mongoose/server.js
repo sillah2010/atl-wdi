@@ -11,10 +11,14 @@ var hbs = require("hbs");
 var logger = require('morgan');
 
 
+mongoose.Promise = global.Promise;
+mongoose.connect('mongodb://localhost/donut_store');
+const db = mongoose.connection
+
 //======================
 // MIDDLEWARE
 //======================
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(express.static("public"));
 app.use(methodOverride("_method"));
@@ -23,7 +27,8 @@ app.set("view engine", "hbs");
 app.set('views', './views');
 
 app.use(express.static(__dirname + 'public'));
-app.use( logger('dev'));
+app.use(logger('dev'));
+
 
 //======================
 // CONTROLLERS
@@ -33,8 +38,8 @@ var seedController = require('./controllers/seeds.js');
 app.use('/seed', seedController);
 
 //for root directory, show all donuts
-var donutsController = require('./controllers/donuts.js');
-app.use('/', donutsController);
+//var donutsController = require('./controllers/donuts.js');
+//app.use('/', donutsController);
 
 //======================
 // LISTENERS
@@ -43,3 +48,20 @@ app.use('/', donutsController);
 
 
 //CREATE THE MONGOOSE CONNECTION and SET APP TO LISTEN to 3000
+
+db.on('error',(err) => {
+    console.log(err);
+});
+
+db.on('open',() => {
+    console.log("Mongoose is connected!");
+});
+
+app.get('/', (req, res) => {
+    res.send("This works");
+})
+
+const port = 3000;
+app.listen(port, () => {
+    console.log(`Express started on ${port}`);
+})
