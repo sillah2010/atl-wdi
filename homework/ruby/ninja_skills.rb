@@ -12,3 +12,9 @@ print dora
 puts dora.class
 
 #Challenge 3
+d = 7
+puts d
+e = 8.5
+puts e
+d = e
+puts d
