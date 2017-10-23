@@ -28,3 +28,13 @@ g = "2"
 gToNumber = 2
 puts g. + gToNumber.to_s
 
+#Challenge 5
+puts "Input an integer"
+integer = gets.chomp.to_i
+puts integer * 2
+
+puts "What is your name"
+name = gets.chomp
+puts "What do you like to do"
+likesToDo = gets.chomp
+puts "#{name} likes to #{likesToDo}"
