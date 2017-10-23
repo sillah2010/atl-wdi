@@ -48,3 +48,16 @@ myFirstArray[1] = "Joe"
 myFirstArray[2] = 3
 myFirstArray.push(true)
 puts myFirstArray[3].class
+
+#Challenge 7
+myFavoriteAnimals = {
+    Edgar: "Donkey",
+    Jack: "Kangaroo",
+    Buddy: "Dog",
+    Simba: "Lion",
+    Pumba: "Warthog"
+}
+myFavoriteAnimals[:Edgar] = "Bear"
+
+favoriteMovie = {}
+favoriteMovie[:movie] = "Avengers: Age of Ultron"
