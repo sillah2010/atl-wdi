@@ -53,7 +53,7 @@ class App extends Component {
     this.setState(newState);
   }
 
-  //Pass _searchByTitle, _searchById, and this.state.movie to it's appropriate child components.
+  //Pass searchByTitle, searchById, and this.state.movie to it's appropriate child components.
   render() {
     return (
       <div className="App">
